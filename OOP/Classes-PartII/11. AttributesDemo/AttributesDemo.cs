@@ -44,9 +44,8 @@ namespace AttributesDemo
                     {
                         if (attr is VersionAttribute)
                         {
-                            var classVersion = (VersionAttribute)attr;                            
-                            // for some reason can't cast attr to (VersionAttribute) directly and get to the Version property
-                            Console.WriteLine("{0} Version is: {1}", type.Name, classVersion.Version);
+                            // cast has lower priority than '.', so additional parentheses needed
+                            Console.WriteLine("{0} Version is: {1}", type.Name, ((VersionAttribute)attr).Version);
                         }
                     }
                 }
