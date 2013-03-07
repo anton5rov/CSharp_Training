@@ -5,10 +5,10 @@ class Timer
 {
     public delegate void MethodDelegate();    
 
-    public int Delay { get; set; }
+    public uint Delay { get; set; }
     public MethodDelegate MethodProperty { get; set; }
     
-    public Timer(int delay, MethodDelegate invokeMethod) //constructor
+    public Timer(uint delay, MethodDelegate invokeMethod) //constructor
     {
         this.Delay = delay;
         this.MethodProperty = invokeMethod;
@@ -17,7 +17,7 @@ class Timer
             while (true)
             {
                 this.MethodProperty();
-                Thread.Sleep(this.Delay);
+                Thread.Sleep((int)this.Delay);
             }
         });
         newThread.Start();        
