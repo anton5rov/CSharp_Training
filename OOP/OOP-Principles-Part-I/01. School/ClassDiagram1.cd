@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="School.Person">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAgAEAAAABAQAAEAEAAAAAAAAAAAAAAAAAACAAAAAg=</HashCode>
+      <FileName>People.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Orientation="Left" Position="0.337" />
+  </Class>
+  <Class Name="School.Student">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="School.Teacher">
+    <Position X="3.75" Y="3.5" Width="1.75" />
+    <InheritanceLine Type="School.Person" FixedFromPoint="true">
+      <Path>
+        <Point X="4.625" Y="2.769" />
+        <Point X="4.625" Y="3.5" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Disciplines" Type="School.Discipline">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.16" Width="1.282" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Teacher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Disciplines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="School.SchoolClass" BaseTypeListCollapsed="true">
+    <Position X="8" Y="2.5" Width="2" />
+    <AssociationLine Name="Students" Type="School.Student" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.438" Y="2.5" />
+        <Point X="8.438" Y="1.251" />
+        <Point X="7.75" Y="1.251" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.816" Y="-1.14" Height="0.16" Width="1.815" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgACAAI=</HashCode>
+      <FileName>Class.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Students" />
+      <Property Name="Teachers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Orientation="Left" Position="0.1" />
+  </Class>
+  <Class Name="School.Discipline" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="2.75" Width="1.5" />
+    <AssociationLine Name="Teachers" Type="School.Teacher">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.202" Y="0.06" Height="0.16" Width="1.355" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAFAAAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Disciplines.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Teachers" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.487" />
+  </Class>
+  <Interface Name="School.INotable">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>INotable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.4" />
+</ClassDiagram>
