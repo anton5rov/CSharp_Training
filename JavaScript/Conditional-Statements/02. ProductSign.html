@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Product sign</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var a = -56;
+        var b = 8;
+        var c = -12;       
+        
+        if (a.toString()[0] == "-")//a is negative
+        {
+            if (b.toString()[0] == "-")//a, b are negative
+            {
+                if (c.toString()[0] == "-") jsConsole.writeLine("The production sign is \"-\"");//c is negative
+                else jsConsole.writeLine("The production sign is \"+\"");//c is positive
+            }
+            else //a is negative, b is posititve
+            {
+                if (c.toString()[0] == "-") jsConsole.writeLine("The production sign is \"+\"");//c is negative                
+                else jsConsole.writeLine("The production sign is \"-\"");//c is positive 
+            }
+        }
+        else//a is postive
+        {
+            if (b.toString()[0] == "-")//a is positive, b is negative
+            {
+                if (c.toString()[0] == "-") jsConsole.writeLine("The production sign is \"+\"");//c is negative                    
+                else jsConsole.writeLine("The production sign is \"-\"");//c is positive
+            }
+            else //a, b are posititve
+            {
+                if (c.toString()[0] == "-") jsConsole.writeLine("The production sign is \"-\"");//c is negative
+                else jsConsole.writeLine("The production sign is \"+\"");//c is positive 
+            }
+        }
+	</script>
+</body>
+</html>

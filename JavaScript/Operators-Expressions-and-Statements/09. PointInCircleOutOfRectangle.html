@@ -1,0 +1,47 @@
+﻿<html>
+<head>
+	<title>Point in the circle out of the rectangle</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	    var circleR = 3;
+	    var circleX = 1;
+	    var circleY = 1;
+        var topRectangle = 1;
+        var leftRectangle = -1;
+        var widthRectangle = 6;
+        var heightRectangle = 2;
+
+        jsConsole.writeLine("Point(0, 0): ");
+        CheckPoint(0, 0);
+        jsConsole.writeLine();
+        jsConsole.writeLine("Point(1, 2): ");
+        CheckPoint(1, 2);
+
+
+        function CheckPoint(xPoint, yPoint) {
+            if (InTheCircle(xPoint, yPoint) && OutTheRectangle(xPoint, yPoint)) {
+                jsConsole.writeLine("The point is within the cirle and is outside the rectangle.");
+            }
+            else jsConsole.writeLine("The point is not within the cirle or is in both the circle and the rectangle.");
+        }
+
+        function InTheCircle(xPoint, yPoint) {
+            var dX = xPoint - circleX;
+            var dY = yPoint - circleY;
+            if ((dX * dX + dY * dY) <= (circleR * circleR)) return true;
+            else return false;
+            }
+        function OutTheRectangle(xPoint, yPoint){
+            if ((xPoint < leftRectangle) ||
+                (xPoint > (leftRectangle + widthRectangle)) ||
+                (yPoint < (topRectangle - heightRectangle)) ||
+                (yPoint > topRectangle)) return true;
+            else return false;
+            }
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CompareTwoCharArrays</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <a href="#" id="btn-print-nums" onclick="CheckArrays()">Click to check arrays</a>		
+	<div id="js-console">
+        <label for = "tb-array1">Input first array:</label>
+	    <input type="text" id="tb-array1" />
+        <label for = "tb-array2">Input second array:</label>
+	    <input type="text" id="tb-array2" />
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function CheckArrays() {
+	        ClearConsole();
+	        var inputString = jsConsole.read("#tb-array1");
+	        var arr1 = inputString.split(" ");
+	            inputString = jsConsole.read("#tb-array2");
+	        var arr2 = inputString.split(" ");
+
+            //check input
+	        jsConsole.writeLine(arr1 + ", length: " + arr1.length);
+	        jsConsole.writeLine(arr2 + ", length: " + arr2.length);
+	        //-----------
+
+	        var differenceFound = false;
+	        var counter = 0;
+
+	        //compare  arrays
+            while (counter < arr1.length && counter < arr2.length) {
+
+                var tempChar1 = arr1[counter].toUpperCase();
+                var tempChar2 = arr2[counter].toUpperCase();
+                //used to convert small caps to caps temporarily  
+
+	            if (tempChar1 > tempChar2) {
+	                jsConsole.writeLine("First array is After second array lexicographically.");
+	                differenceFound = true;
+	                break;
+	            }
+	            else if (tempChar1 < tempChar2) {
+	                jsConsole.writeLine("First array is Before second array lexicographically.");
+	                differenceFound = true;
+	                break;
+	            }
+	            else counter++;
+	        }
+	        if (!differenceFound) // no differences found, cheking up to smaller array, so the size of arrays matters
+	        {
+	            if (arr1.length == arr2.length) {
+	                jsConsole.writeLine("Arrays are identical!");
+	            }
+	            else if (arr1.length < arr2.length) {
+	                jsConsole.writeLine("First array is Before second array lexicographically.");
+	            }
+	            else {
+	                jsConsole.writeLine("First array is After second array lexicographically.");
+	            }
+	        }
+	    }
+
+	    function ClearConsole() {
+	        document.getElementById("js-console").children[4].innerHTML = "";			
+            }
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Smallest and largest elements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console">
+        <a href="#" id="btn-print-nums" onclick="Start()">Click for result</a>
+    </div>
+    <script src="scripts/js-console.js">	  
+    </script>
+    <script>
+	    function Start() {
+            document.getElementById("js-console").children[1].innerHTML = "";
+	        var arr = [document, window, navigator];
+            for (var index in arr) {
+                print(arr[index]);
+            }
+        }
+        
+        function findMax(obj) {
+            var max = "";
+	        for (var prop in obj) {	            
+	            if (prop > max) 
+                    max = prop;
+	        }
+            return max;
+        }
+
+        function findMin(obj) {
+            var min = "zzzzzzzz";
+            for (var prop in obj) {
+                if (prop < min)
+                    min = prop;
+            }
+            return min;
+        }
+
+        function print(obj) {
+            jsConsole.writeLine(obj + ": Min = " + findMin(obj));
+            jsConsole.writeLine(obj + ": Max = " + findMax(obj));
+        }
+    </script>
+</body>
+</html>
