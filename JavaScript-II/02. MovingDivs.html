@@ -114,6 +114,7 @@
                                 right: Math.random() * pathMaxSize + pathMinSize + newShape.StartPosition.left,
                                 bottom: Math.random() * pathMaxSize + pathMinSize + newShape.StartPosition.top
                             };
+							newShape.MoveShape = function(){MoveRect(this);}
                         }
 
                         // Object with oval path with custom properties
@@ -126,6 +127,7 @@
                                 Y: newShape.StartPosition.top
                             };
                             newShape.PathRadius = newShape.CenterPosition.X - newShape.StartPosition.left;
+							newShape.MoveShape = function(){MoveOval(this);}
                         }
                         // ------------------------------------
 
@@ -135,13 +137,7 @@
 
                         timer = setInterval(function () {
                             for (var i = 0; i < divsArray.length; i++) {
-                                if (divsArray[i].PathType == "rect") {
-                                    MoveRect(divsArray[i]);
-                                }
-
-                                else if (divsArray[i].PathType == "oval") {
-                                    MoveOval(divsArray[i]);
-                                }
+								divsArray[i].MoveShape();
                                 divsArray[i].Element.style.top = divsArray[i].Position.top + "px";
                                 divsArray[i].Element.style.left = divsArray[i].Position.left + "px";
                             }
