@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Find the most frequent number in an array</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <a href="#" id="btn-execute" onclick="FindMostFrequent()">Click to check the array</a>		
+	<div id="js-console">
+        <label for = "tb-array1">Input an array of numbers, separated by space:</label>
+	    <input type="text" id="tb-array1" />        
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function FindMostFrequent() {
+	        //ClearConsole(); //uncomment, if you'd like to clear the console first	        
+	        var inputString = jsConsole.read("#tb-array1");
+	        var array = inputString.split(" ");
+            //var array = [4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3];
+            array.sort(sortFunc);
+            var mostFrequent = array[0];
+            var mostFrequentCount = 1;
+            var currentIndex = 0;
+            while (currentIndex < array.length - 1)
+            {
+                var tempCount = 1;
+                while (currentIndex + 1 < array.length && array[currentIndex] == array[currentIndex + 1])
+                {
+                    tempCount++;
+                    currentIndex++;
+                }
+                if (tempCount> mostFrequentCount)
+                {
+                    mostFrequentCount = tempCount;
+                    mostFrequent = array[currentIndex];
+                }
+                currentIndex++;
+            }
+            jsConsole.writeLine("Most frequent number: " + mostFrequent);
+            jsConsole.writeLine("Counts: " + mostFrequentCount + " times.");
+            
+        }
+        //-----------------
+        function sortFunc(a, b){
+            return a-b;
+        }
+
+        //-----------------
+	    function ClearConsole() {
+	        document.getElementById("js-console").children[2].innerHTML = "";			
+            }
+	</script>
+</body>
+</html>

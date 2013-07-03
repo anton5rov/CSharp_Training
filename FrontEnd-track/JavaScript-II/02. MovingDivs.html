@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Random moving divs</title>
+        <style>
+		    body, html{
+			    position:relative;
+			    padding:10px;
+			    min-height:100%;
+			    background: #222;
+			    overflow:hidden;
+		    }
+		    #wrapper{			
+			    position:relative;
+			    overflow:hidden;
+		    }
+		    #wrapper div.movingDiv {			
+			    padding: 0;
+			    width:50px;
+			    height:50px;
+			    position:absolute;
+			    background-color:#fff;
+			    border: 3px solid black;
+			    border-radius: 10px;
+			    text-align:center;					
+		    }
+		    p{			
+			    color:#fff;
+			    display:inline-block;
+		    }	
+		    button{
+			    margin:10px 10px 10px 0;
+		    }
+	    </style>
+    </head>
+
+    <body>
+        <button id="add-div-btn" onclick="addMovingDiv()">Add moving div</button>
+        <div id = "wrapper">
+        </div>
+        <script type = "text/javascript">
+            // Common environment variables
+            var screenWidth, screenHeight, minWindowSize;
+            var contentDiv;
+            var divsArray = [];
+            var docFragment = document.createDocumentFragment();
+            var timer;
+            var pathMinSize = 10;
+            var pathMaxSize = 150;
+            // -------------------------
+
+            // Parent class MovingShape
+            function movingShape(pathType) {
+                var element = document.createElement("div");
+                element.className = "movingDiv";
+                this.pathType = pathType;
+                this.position = {
+                    top: Math.random() * screenHeight - 50,
+                    left: Math.random() * screenWidth
+                };
+                this.startPosition = {
+                    top: this.position.top,
+                    left: this.position.left
+                };
+
+                boxProperties(element);
+
+                return {
+                    Element: element,
+                    PathType: pathType,
+                    Position: this.position,
+                    StartPosition: this.startPosition
+                };
+            }
+            // -------------------------
+
+            // Random properties generator
+            function genRandomColor() {
+                var r = Math.random() * 255 | 0;
+                var g = Math.random() * 255 | 0;
+                var b = Math.random() * 255 | 0;
+                return "rgb(" + r + ", " + g + ", " + b + ")";
+            }
+
+            function boxProperties(div) {
+                div.style.backgroundColor = genRandomColor();
+                div.style.color = genRandomColor();
+                div.style.borderColor = genRandomColor();
+            }
+            // -------------------------
+
+            // Main program
+            function addMovingDiv() {
+                screenWidth = document.documentElement.clientWidth - 60;
+                screenHeight = document.documentElement.clientHeight - 120;
+                minWindowSize = (screenHeight < screenWidth) ? screenHeight : screenWidth;
+
+                contentDiv = document.getElementById("wrapper");
+                contentDiv.style.width = screenWidth + "px";
+                contentDiv.style.height = screenHeight + "px";
+                contentDiv.style.backgroundColor = "#777";
+
+                // Modul definition
+                var movingShapes = (function () {
+                    function add(type) {
+                        var newShape = new movingShape(type);
+
+                        // Object with rectangular path with custom properties
+                        if (newShape.PathType == "rect") {
+                            newShape.Element.innerHTML = "RECT path";
+                            newShape.Direction = "right";
+                            newShape.Path = {
+                                right: Math.random() * pathMaxSize + pathMinSize + newShape.StartPosition.left,
+                                bottom: Math.random() * pathMaxSize + pathMinSize + newShape.StartPosition.top
+                            };
+							newShape.MoveShape = function(){MoveRect(this);}
+                        }
+
+                        // Object with oval path with custom properties
+                        if (newShape.PathType == "oval") {
+                            newShape.Element.innerHTML = "OVAL path";
+                            newShape.Element.style.borderRadius = 25 + "px";
+                            newShape.Angle = 180;
+                            newShape.CenterPosition = {
+                                X: Math.random() * pathMaxSize + pathMinSize + newShape.StartPosition.left,
+                                Y: newShape.StartPosition.top
+                            };
+                            newShape.PathRadius = newShape.CenterPosition.X - newShape.StartPosition.left;
+							newShape.MoveShape = function(){MoveOval(this);}
+                        }
+                        // ------------------------------------
+
+                        // Actual move of DIV element
+                    
+                        divsArray.push(newShape);
+
+                        timer = setInterval(function () {
+                            for (var i = 0; i < divsArray.length; i++) {
+								divsArray[i].MoveShape();
+                                divsArray[i].Element.style.top = divsArray[i].Position.top + "px";
+                                divsArray[i].Element.style.left = divsArray[i].Position.left + "px";
+                            }
+                            redrawDivs(divsArray);
+                        }, 100);
+                    }
+
+                    return {
+                        add: add
+                    }
+                })();
+                // End modul -------------------------
+
+                var randomPathType = Math.round(Math.random());
+                if (randomPathType) movingShapes.add("rect");
+                else movingShapes.add("oval");
+            }
+            // End Main -------------------------
+
+            // Functions
+            function redrawDivs(divsArray) {
+                while (contentDiv.firstChild) {
+                    contentDiv.removeChild(contentDiv.firstChild);
+                }
+
+                for (var i = 0; i < divsArray.length; i++) {
+                    docFragment.appendChild(divsArray[i].Element);
+                }
+                contentDiv.appendChild(docFragment);
+            }
+
+            function MoveRect(shape) {
+                if (shape.Direction === "right") {
+                    if (shape.Position.left < shape.Path.right) {
+                        shape.Position.left++;
+                    }
+                    else {
+                        shape.Direction = "down";
+                        shape.Position.top++;
+                    }
+                }
+                if (shape.Direction === "down") {
+                    if (shape.Position.top < shape.Path.bottom) {
+                        shape.Position.top++;
+                    }
+                    else {
+                        shape.Direction = "left";
+                        shape.Position.left--;
+                    }
+                }
+                if (shape.Direction === "left") {
+                    if (shape.Position.left > shape.StartPosition.left) {
+                        shape.Position.left--;
+                    }
+                    else {
+                        shape.Direction = "up";
+                        shape.Position.top--;
+                    }
+                }
+                if (shape.Direction === "up") {
+                    if (shape.Position.top > shape.StartPosition.top) {
+                        shape.Position.top--;
+                    }
+                    else {
+                        shape.Direction = "right";
+                        shape.Position.left++;
+                    }
+                }
+            }
+
+            function MoveOval(shape) {
+                shape.Angle = (shape.Angle + 1) % 360;
+                var angleInRadians = Math.PI * shape.Angle / 180;
+                shape.Position.top = shape.CenterPosition.Y +
+                        shape.PathRadius * Math.sin(angleInRadians);
+                shape.Position.left = shape.CenterPosition.X +
+                        shape.PathRadius * Math.cos(angleInRadians);
+            }
+        </script>
+    </body>
+</html>

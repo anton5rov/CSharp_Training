@@ -1,0 +1,21 @@
+body, form, label, img, input, section, body {
+  margin: 0;
+  padding: 0; }
+
+body header nav form label img {
+  width: 15%;
+  opacity: 0.4; }
+  body header nav form label img:hover {
+    opacity: 1; }
+body header nav form input {
+  position: absolute;
+  top: -999px; }
+body header nav form input + img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  display: none; }
+body header nav form input:checked + img {
+  display: block; }
+

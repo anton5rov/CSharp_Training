@@ -1,0 +1,219 @@
+﻿*
+{
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    padding:0px;
+    margin:0px;
+}
+body
+{
+    font: 12px Segoe UI, Arial;
+	color: #1e395b;	
+	overflow:hidden; text-overflow:clip;	
+	margin:10px;
+}
+::-moz-focus-inner{border : 0px; outline: 0px;}
+#mainWidnow
+{
+    position:relative;
+    width: 409px;
+    height: 352px;
+    padding: 12px;
+    background-color: #d9e4f1;
+    border:1px solid #5c6a79;
+}
+a
+{
+    text-decoration:none;
+    color: black;
+}
+.floatLeft{float:left}
+.clear {clear:both}
+.bordered
+{
+    border-radius:3px;
+    border:1px solid #8797aa;
+}
+.whiteLineInside{ box-shadow: 0px 0px 0px 1px white inset;}
+
+#menu
+{   
+    position:relative;    
+    top:-12px;
+    left:-12px;    
+    width:407px;
+    height:20px;        
+    border-bottom:1px solid #b6bccc;
+    background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top,  #ffffff 0%, #e5eaf5 40%, #d4dbed 41%, #e1e6f6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(40%,#e5eaf5), color-stop(41%,#d4dbed), color-stop(100%,#e1e6f6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#e5eaf5 40%,#d4dbed 41%,#e1e6f6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #ffffff 0%,#e5eaf5 40%,#d4dbed 41%,#e1e6f6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #ffffff 0%,#e5eaf5 40%,#d4dbed 41%,#e1e6f6 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #ffffff 0%,#e5eaf5 40%,#d4dbed 41%,#e1e6f6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e1e6f6',GradientType=0 ); /* IE6-9 */
+}
+
+#menu a
+{
+    float:left;        
+    margin:1px 7px;        
+    font-size: 12px;
+}
+#menu a:first-letter{ text-decoration:underline; }
+
+#inputField
+{       
+    width:100%;
+    height:50px;         
+}
+#inputField input
+{
+    padding:10px 5px 0px;
+    direction:rtl;
+    font:18pt Consolas;
+    width:100%;
+    height:100%;
+    color:#333;
+    background: #e5eefb; /* Old browsers */
+    background: -moz-linear-gradient(top,  #e5eefb 0%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e5eefb), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #e5eefb 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #e5eefb 0%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #e5eefb 0%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #e5eefb 0%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e5eefb', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    
+}
+#binaryPresentation
+{    
+    table-layout:fixed;
+    width:100%;
+    height:60px;
+    margin-top:5px;
+    padding:2px;
+    font:13px Consolas;
+    line-height:0.8;    
+    color:#1e395b;    
+}
+#binaryPresentation td
+{   
+    margin:0px;
+    width: 1%;    
+    padding:0px 8px 0px 8px;
+    text-align:justify;        
+}
+tr:nth-of-type(2n){color:#666;}
+#binaryPresentation tr:nth-of-type(2n)>td:nth-last-of-type(1){text-align:right;}
+
+div.panel
+{
+    width:73px;
+    height:91px;
+    padding:5px;
+    margin-top:5px;    
+}
+div.panel label
+{
+    line-height:170%;        
+    vertical-align:bottom;    
+}
+#keyboard
+{
+    position:absolute;
+    top:152px;
+    left:90px;
+    width:310px;
+    height:186px;    
+}
+button
+{
+    width:34px; 
+    height:27px;
+    margin:0 1px 5px 0;
+    font: 10px Segoe UI, Arial;
+	color: #1e395b;
+	text-align:center;  
+}
+button.active:active 
+{
+	border:2px inset #f5d50f !important;				
+}
+button.active
+{
+	background-image:url('../images/button_operators_activ.png');	
+	background-size:100% 100%;		
+	vertical-align:top;	
+}
+button.active:hover, #Numbers button.active:hover, #MemoryButtons button:hover
+{
+	background-image:url('../images/button_numbers_activ-hover.png');
+	background-repeat:repeat-x;
+	border:1px solid #f5d50f;
+}	
+button.inactive
+{
+    background-color: inherit;
+    font-size:14px;
+}
+#LogicalOperations
+{
+    position:relative;
+    display:inline-block;    
+    width:77px;
+    height:187px;    
+}
+#HexSymbols
+{
+    display:inline-block;
+    width:39px;
+    height:187px;    
+}
+#MemoryButtons button
+{   
+    background-image:none;
+    background-color:transparent;
+}
+#ClearGoup
+{
+    width:114px;     
+}
+#Numbers
+{
+    width:114px;    
+}
+#zero
+{
+    width:72px;
+}
+#Numbers button.active
+{    
+    background-image:url('../images/button_numbers_activ.png');    
+    font-size:14px;
+}
+#Operations
+{
+    position:absolute;
+    top:32px;
+    left:230px;    
+    width:39px;
+    height:187px;    
+}
+#Others
+{
+    position:absolute;
+    top:32px;
+    left:268px;    
+}
+#equalSign
+{
+    vertical-align:top;
+    display:table-cell; 
+    height:59px;
+    font-weight:bold;
+    font-size: 20px; 
+    line-height:10px; 
+     
+}
+    

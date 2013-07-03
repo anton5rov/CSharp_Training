@@ -1,0 +1,37 @@
+<html>
+<head>
+	<title>Quadratic equation</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<h2>Hit F5 for new input!</h2>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+		var a = parseFloat(prompt("Input coefficient a: ", "0"));
+		while (a == 0 || isNaN(a)){
+		jsConsole.writeLine("a can't be 0 or NaN!" )
+		var a = parseFloat(prompt("Input coefficient a: ", "0"));
+		}		
+        var b = parseFloat(prompt("Input coefficient b: ", "0"));
+        var c = parseFloat(prompt("Input coefficient c: ", "0"));
+        var discriminant;
+        var root1;
+        var root2;
+        
+        discriminant = (b * b) - (4 * a * c);
+        if (discriminant < 0) jsConsole.writeLine("Equation has no real roots");
+        else if (discriminant == 0)
+        {
+            root1 = (-b)/(2 * a);
+            jsConsole.writeLine("Equation has one real root: " + root1);
+        }
+        else
+        {
+            root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+            root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+            jsConsole.writeLine("Equation has two real roots: " + root1 + " and " + root2);
+        }
+	</script>
+</body>
+</html>

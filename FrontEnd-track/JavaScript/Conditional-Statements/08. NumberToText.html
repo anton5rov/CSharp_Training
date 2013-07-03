@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Number to text</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<h2>Hit F5 for new input!</h2>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>	
+	<script>		
+        var number = parseInt(prompt("Input a number in [0, 999] range: "));        
+        var numberName = "";
+        var digitName;
+             
+        if (number > 0 && number <= 999){
+            if (Math.floor((number / 100)) > 0){ //if there are hundreds
+                digitName = GetDigitName(Math.floor(number / 100));
+                numberName = digitName + " hundred ";
+            }
+            if ((number % 100) >= 20) { // if tens are bigger than 20
+                switch (Math.floor((number % 100) / 10)){ 
+                    case 2: numberName += "twenty "; break;
+                    case 3: numberName += "thirty "; break;
+                    case 4: numberName += "forty "; break;
+                    case 5: numberName += "fifty "; break;
+                    case 6: numberName += "sixty "; break;
+                    case 7: numberName += "seventy "; break;
+                    case 8: numberName += "eighty "; break;
+                    case 9: numberName += "ninety "; break;
+                    default: numberName += ""; break;                  
+                }
+            }
+            if (((number % 100) > 0) && ((number % 100) < 20)) {
+                if (Math.floor(number / 100) > 0)numberName += " and "; // added "and" for ...hundred and [one to nineteen]
+                switch (number % 100){
+                    case 10: numberName += "ten"; break;
+                    case 11: numberName += "eleven"; break;
+                    case 12: numberName += "twelve"; break;
+                    case 13: numberName += "thirteen"; break;
+                    case 14: numberName += "fourteen"; break;
+                    case 15: numberName += "fifteen"; break;
+                    case 16: numberName += "sixteen"; break;
+                    case 17: numberName += "seventeen"; break;
+                    case 18: numberName += "eighteen"; break;
+                    case 19: numberName += "nineteen"; break;
+                    default: numberName += ""; break;
+                }
+            }
+            if (Math.floor((number % 100) / 10) != 1){ // to exclude [10 to 19], e.g. 15 will result in fifteenfive
+                digitName = GetDigitName(number % 10);
+                numberName += digitName;
+            }
+        }
+        else if (number == 0) numberName = "zero";
+        else numberName = "Invalid input or number not in range!";
+        numberName = numberName[0].toUpperCase() + numberName.slice(1, numberName.length);//start with a capital letter
+        jsConsole.writeLine(numberName);
+
+        function GetDigitName(num) {
+            var dname;
+            switch (num)
+            {
+                case 1: dName = "one"; break;
+                case 2: dName = "two"; break;
+                case 3: dName = "three"; break;
+                case 4: dName = "four"; break;
+                case 5: dName = "five"; break;
+                case 6: dName = "six"; break;
+                case 7: dName = "seven"; break;
+                case 8: dName = "eight"; break;
+                case 9: dName = "nine"; break;
+                default: dName = ""; break;
+            }            
+            return dName;
+        }
+	</script>
+</body>
+</html>

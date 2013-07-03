@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calc</title>
+    <link rel = "stylesheet" type = "text/css" href = "CSS/04. Calculator.css"/>
+</head>
+<body>
+    <div id = "mainWidnow">
+        <div id = "menu">
+            <a href = "#">View</a>
+            <a href = "#">Edit</a>
+            <a href = "#">Help</a>
+        </div>    
+        
+        <div id = "inputField" >
+            <input type = "text" value = "8854455" maxlength = "30" class = "bordered"/>
+        </div>
+        <div id = "binaryPresentation" class = "bordered whiteLineInside" >
+            <table id = "values">
+                <tr>
+                    <td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td>
+                </tr>
+                <tr>
+                    <td colspan = "4">63</td><td colspan = "3">47</td><td>32</td>
+                </tr>
+                 <tr>
+                    <td>0000</td><td>0000</td><td>1000</td><td>0111</td><td>0001</td><td>1011</td><td>1011</td><td>0111</td>
+                </tr>
+                <tr>
+                    <td colspan = "4">31</td><td colspan = "3">15</td><td>0</td>
+                </tr>        
+            </table>
+        </div>
+        <div id = "numericSystem" class = "panel bordered">            
+            <input type = "radio" name = "numSystem" value = "Hex" id = "hexRadio"/>
+            <label for = "hexRadio">Hex</label><br/>
+            <input type = "radio" name = "numSystem" value = "Dec" id = "decRadio"  checked = "checked"/>
+            <label for = "decRadio">Dec</label><br/>
+            <input type = "radio" name = "numSystem" value = "Hex" id = "octRadio"/>
+            <label for = "octRadio">Oct</label><br/>
+            <input type = "radio" name = "numSystem" value = "Hex" id = "binRadio"/>
+            <label for = "binRadio">Bin</label><br/> 
+        </div>
+        <div id = "word" class = "panel bordered">            
+            <input type = "radio" name = "wordSize" value = "qword" id = "qwordRadio" checked = "checked"/>
+            <label for = "qwordRadio">Qword</label><br/>
+            <input type = "radio" name = "wordSize" value = "dword" id = "dwordRadio"/>
+            <label for = "dwordRadio">Dword</label><br/>
+            <input type = "radio" name = "wordSize" value = "word" id = "wordRadio"/>
+            <label for = "wordRadio">Word</label><br/>
+            <input type = "radio" name = "wordSIze" value = "byte" id = "byteRadio"/>
+            <label for = "byteRadio">Byte</label><br/>
+        </div>
+        <div id = "keyboard">
+            <div id = "LogicalOperations" class="floatLeft">
+                <button class = "bordered inactive"></button>
+                <button class = "bordered whiteLineInside active">Mod</button>
+                <button class = "bordered whiteLineInside active">(</button>
+                <button class = "bordered whiteLineInside active">)</button>
+                <button class = "bordered whiteLineInside active">RoL</button>
+                <button class = "bordered whiteLineInside active">RoR</button>
+                <button class = "bordered whiteLineInside active">Or</button>
+                <button class = "bordered whiteLineInside active">Xor</button>
+                <button class = "bordered whiteLineInside active">Lsh</button>
+                <button class = "bordered whiteLineInside active">Rsh</button>
+                <button class = "bordered whiteLineInside active">Not</button>
+                <button class = "bordered whiteLineInside active">And</button>
+            </div>
+            <div id = "HexSymbols" class="floatLeft">            
+                <button class = "bordered inactive">A</button>
+                <button class = "bordered inactive">B</button>
+                <button class = "bordered inactive">C</button>
+                <button class = "bordered inactive">D</button>
+                <button class = "bordered inactive">E</button>
+                <button class = "bordered inactive">F</button>
+            </div>
+            <div id = "MemoryButtons" class="floatLeft">            
+                <button class = "bordered whiteLineInside active">MC</button>
+                <button class = "bordered whiteLineInside active">MR</button>
+                <button class = "bordered whiteLineInside active">MS</button>
+                <button class = "bordered whiteLineInside active">M+</button>
+                <button class = "bordered whiteLineInside active">M-</button>                
+            </div>
+            <div id = "ClearGoup" class="floatLeft">            
+                <button class = "bordered whiteLineInside active">&larr;</button>
+                <button class = "bordered whiteLineInside active">CE</button>
+                <button class = "bordered whiteLineInside active">C</button>                                                                
+            </div>            
+            <div id = "Numbers" class="floatLeft">            
+                <button class = "bordered whiteLineInside active">7</button>
+                <button class = "bordered whiteLineInside active">8</button>
+                <button class = "bordered whiteLineInside active">9</button>
+                <button class = "bordered whiteLineInside active">4</button>
+                <button class = "bordered whiteLineInside active">5</button>
+                <button class = "bordered whiteLineInside active">6</button>
+                <button class = "bordered whiteLineInside active">1</button>
+                <button class = "bordered whiteLineInside active">2</button>
+                <button class = "bordered whiteLineInside active">3</button>
+                <button id = "zero" class = "bordered whiteLineInside active">0</button>
+                <button id = "decimalPoint" class = "bordered inactive">.</button>                                                                
+            </div>  
+            <div id = "Operations" >            
+                <button class = "bordered whiteLineInside active">&plusmn;</button>
+                <button class = "bordered whiteLineInside active">/</button>
+                <button class = "bordered whiteLineInside active">*</button>
+                <button class = "bordered whiteLineInside active">-</button>
+                <button class = "bordered whiteLineInside active">+</button>                
+            </div>   
+            <div id = "Others">            
+                <button class = "bordered inactive">&radic;</button>
+                <button class = "bordered inactive">%</button>
+                <button class = "bordered inactive">1/x</button>
+                <button class = "bordered active" id = "equalSign">=</button>                
+            </div>      
+        </div>
+    </div>
+</body>
+</html>

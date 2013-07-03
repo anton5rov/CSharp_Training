@@ -1,0 +1,30 @@
+body
+{ 
+background-color:white;
+}
+@font-face
+{	
+	font-family: Consolas;
+	src: url('../font/CONSOLA.TTF');
+}
+.ConsolasText
+{
+	font-family: Consolas, Arial;	
+}
+h1, p
+{	
+	font-size: 170%;	
+	color: #0094ff;
+}
+h1 {font-weight:bold;}
+@font-face
+{
+	font-family: Edwardian;
+	src: url('../font/ITCEdscr.TTF');
+}
+h1:first-letter
+{
+	background-color: transparent;
+	font:bold 250% Edwardian, Arial;
+	color: inherit;
+}

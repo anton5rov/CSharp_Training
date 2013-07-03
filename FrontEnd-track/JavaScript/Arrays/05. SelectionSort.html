@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Selection Sort an array</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <a href="#" id="btn-execute" onclick="SortArray()">Click to sort the array</a>		
+	<div id="js-console">
+        <label for = "tb-array1">Input an array of numbers, separated by space:</label>
+	    <input type="text" id="tb-array1" />        
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+	    function SortArray() {
+	        //ClearConsole(); //uncomment, if you'd like to clear the console first	        
+	        var inputString = jsConsole.read("#tb-array1");
+	        var array = inputString.split(" ");
+            //var array = [ 1.5, -456.78, 3.14, 1.6, 1.414];
+            var minIndex = 0;
+            for (var position = 0; position < array.length; position++)
+            {
+                minIndex = position;
+                for (var searchMin = position; searchMin < array.length; searchMin++)
+			    {
+                    if (array[searchMin] < array[minIndex])
+                    {   
+                        minIndex = searchMin;                    
+                    }
+                }
+                var temp = array[position];
+                array[position] = array[minIndex];
+                array[minIndex] = temp;            
+            }
+            jsConsole.writeLine(array);
+        }
+        
+        //-----------------
+	    function ClearConsole() {
+	        document.getElementById("js-console").children[2].innerHTML = "";			
+            }
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Name of digit</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+	<div id="js-console"></div>
+	<script src="scripts/js-console.js"></script>
+	<script>
+	    var digitName;
+        var digit = prompt("Input a digit: ");         
+        switch (digit){
+            case '0': digitName = "Zero"; break;
+            case '1': digitName = "One"; break;
+            case '2': digitName = "Two"; break;
+            case '3': digitName = "Three"; break;
+            case '4': digitName = "Four"; break;
+            case '5': digitName = "Five"; break;
+            case '6': digitName = "Six"; break;
+            case '7': digitName = "Seven"; break;
+            case '8': digitName = "Eight"; break;
+            case '9': digitName = "Nine"; break;
+            default: digitName = "Not a digit"; break;
+        }
+        jsConsole.writeLine(digitName);		
+	</script>
+</body>
+</html>

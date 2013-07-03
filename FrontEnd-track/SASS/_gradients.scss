@@ -1,0 +1,16 @@
+$first-color:white;
+$first-position:0%;
+$second-color:black;
+$second-position:100%;
+
+@mixin linear-gradient($first-color, $first-position, $second-color, $second-position){
+	background: $first-color;
+	background: -moz-linear-gradient(top,  $first-color $first-position, $second-color $second-position);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($first-position,$first-color), color-stop($second-position,$second-color));
+	background: -webkit-linear-gradient(top,  $first-color $first-position,$second-color $second-position);
+	background: -o-linear-gradient(top,  $first-color $first-position,$second-color $second-position);
+	background: -ms-linear-gradient(top,  $first-color $first-position,$second-color $second-position);
+	background: linear-gradient(to bottom,  $first-color $first-position,$second-color $second-position);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$first-color', endColorstr='$second-color',GradientType=0 );
+
+}
