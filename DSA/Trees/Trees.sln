@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. TreeClass", "Trees\01. TreeClass.csproj", "{85A6DB34-C4C6-4CED-BD78-8CD187D8D6FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. FindAllExeFilesInWindows", "02. FinAllExeFilesInWindows\02. FindAllExeFilesInWindows.csproj", "{F23EC1D1-235C-4226-BF9F-9F06E4435E75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85A6DB34-C4C6-4CED-BD78-8CD187D8D6FC}.Debug|x86.ActiveCfg = Debug|x86
+		{85A6DB34-C4C6-4CED-BD78-8CD187D8D6FC}.Debug|x86.Build.0 = Debug|x86
+		{85A6DB34-C4C6-4CED-BD78-8CD187D8D6FC}.Release|x86.ActiveCfg = Release|x86
+		{85A6DB34-C4C6-4CED-BD78-8CD187D8D6FC}.Release|x86.Build.0 = Release|x86
+		{F23EC1D1-235C-4226-BF9F-9F06E4435E75}.Debug|x86.ActiveCfg = Debug|x86
+		{F23EC1D1-235C-4226-BF9F-9F06E4435E75}.Debug|x86.Build.0 = Debug|x86
+		{F23EC1D1-235C-4226-BF9F-9F06E4435E75}.Release|x86.ActiveCfg = Release|x86
+		{F23EC1D1-235C-4226-BF9F-9F06E4435E75}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

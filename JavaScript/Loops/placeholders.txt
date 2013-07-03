@@ -1,3 +1,0 @@
-handlebars.com
-קנוח regex
-

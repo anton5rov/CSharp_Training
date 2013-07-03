@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Supermarket", "03. Supermarket\03. Supermarket.csproj", "{37D69425-08F0-486C-9E35-0306A8B7EF9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. Businessmen", "05. Businessmen\05. Businessmen.csproj", "{23D95860-7908-4C95-A258-8504928343F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. RecoverMessage", "04. RecoverMessage\04. RecoverMessage.csproj", "{7BF5903C-E1C7-4BC9-BE82-A8AEB518CE59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37D69425-08F0-486C-9E35-0306A8B7EF9F}.Debug|x86.ActiveCfg = Debug|x86
+		{37D69425-08F0-486C-9E35-0306A8B7EF9F}.Debug|x86.Build.0 = Debug|x86
+		{37D69425-08F0-486C-9E35-0306A8B7EF9F}.Release|x86.ActiveCfg = Release|x86
+		{37D69425-08F0-486C-9E35-0306A8B7EF9F}.Release|x86.Build.0 = Release|x86
+		{23D95860-7908-4C95-A258-8504928343F7}.Debug|x86.ActiveCfg = Debug|x86
+		{23D95860-7908-4C95-A258-8504928343F7}.Debug|x86.Build.0 = Debug|x86
+		{23D95860-7908-4C95-A258-8504928343F7}.Release|x86.ActiveCfg = Release|x86
+		{23D95860-7908-4C95-A258-8504928343F7}.Release|x86.Build.0 = Release|x86
+		{7BF5903C-E1C7-4BC9-BE82-A8AEB518CE59}.Debug|x86.ActiveCfg = Debug|x86
+		{7BF5903C-E1C7-4BC9-BE82-A8AEB518CE59}.Debug|x86.Build.0 = Debug|x86
+		{7BF5903C-E1C7-4BC9-BE82-A8AEB518CE59}.Release|x86.ActiveCfg = Release|x86
+		{7BF5903C-E1C7-4BC9-BE82-A8AEB518CE59}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
