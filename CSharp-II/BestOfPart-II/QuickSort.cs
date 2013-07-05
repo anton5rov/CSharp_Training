@@ -7,7 +7,7 @@ public class QuickSort
         Console.Write("Input the length of the array: ");
         int length = int.Parse(Console.ReadLine());
 
-        int[] array = new int[length];
+        string[] array = new string[length];
         ReadArray(array);
 
         QuickSortArray(array, 0, array.Length - 1);
@@ -15,16 +15,16 @@ public class QuickSort
         PrintArray(array);
     }
 
-    private static void ReadArray(int[] array)
+    private static void ReadArray(string[] array)
     {
-        Console.WriteLine("Input {0} numbers on separate lines:", array.Length);
+        Console.WriteLine("Input {0} strings on separate lines:", array.Length);
         for (int i = 0; i < array.Length; i++)
         {
-            array[i] = int.Parse(Console.ReadLine());
+            array[i] = Console.ReadLine();
         }
     }
 
-    private static void QuickSortArray(int[] array, int fromIndex, int toIndex)
+    private static void QuickSortArray(string[] array, int fromIndex, int toIndex)
     {
         int blockToSortLength = toIndex - fromIndex + 1;
         if (blockToSortLength == 0 || blockToSortLength == 1)
@@ -34,7 +34,7 @@ public class QuickSort
 
         int pivotIndex = (fromIndex + toIndex) / 2;
 
-        int pivot = array[pivotIndex];
+        string pivot = array[pivotIndex];
 
         // Move the pivot to the end of the block.
         Swap(array, pivotIndex, toIndex);
@@ -50,11 +50,11 @@ public class QuickSort
         {
             for (int i = greaterElementIndex; i < toIndex; i++)
             {
-                if (array[i] <= pivot)
+                if (array[i].CompareTo(pivot) <= 0)
                 {
                     greaterElementIndex++;
                 }
-                else 
+                else
                 {
                     break;
                 }
@@ -64,7 +64,7 @@ public class QuickSort
 
             for (int i = lowerElementIndex; i > greaterElementIndex; i--)
             {
-                if (array[i] >= pivot)
+                if (array[i].CompareTo(pivot) >= 0)
                 {
                     lowerElementIndex--;
                 }
@@ -87,18 +87,18 @@ public class QuickSort
         QuickSortArray(array, pivotIndex + 1, toIndex);
     }
 
-    private static void Swap(int[] array, int firstIndex, int secondIndex)
+    private static void Swap(string[] array, int firstIndex, int secondIndex)
     {
         // Swap only if indices and values not match.
         if (firstIndex != secondIndex && array[firstIndex] != array[secondIndex])
         {
-            int buff = array[firstIndex];
+            string buff = array[firstIndex];
             array[firstIndex] = array[secondIndex];
             array[secondIndex] = buff;
         }
     }
 
-    private static void PrintArray(int[] array)
+    private static void PrintArray(string[] array)
     {
         Console.WriteLine(string.Join(", ", array));
     }
