@@ -1,40 +1,32 @@
-﻿using System;
-using System.Threading;
+﻿// Using delegates write a class Timer that can execute certain method at each t seconds.
 
-class Timer
+namespace Timer
 {
-    public delegate void MethodDelegate();    
+    using System;
+    using System.Threading;
 
-    public uint Delay { get; set; }
-    public MethodDelegate MethodProperty { get; set; }
-    
-    public Timer(uint delay, MethodDelegate invokeMethod) //constructor
+    public class Timer
     {
-        this.Delay = delay;
-        this.MethodProperty = invokeMethod;
-        Thread newThread = new Thread(() => //for parallel execution of methods
+        public Timer(uint delay, MethodDelegate invokeMethod)
         {
-            while (true)
+            this.Delay = delay;
+            this.MethodProperty = invokeMethod;
+            Thread newThread = new Thread(() =>
             {
-                this.MethodProperty();
-                Thread.Sleep((int)this.Delay);
-            }
-        });
-        newThread.Start();        
-    }
+                while (true)
+                {
+                    this.MethodProperty();
+                    Thread.Sleep((int)this.Delay);
+                }
+            });
 
-    public static void SampleMethod()
-    {
-        Console.WriteLine("Call of SampleMethod at: {0}", DateTime.Now);        
-    }
-    public static void SampleMethod1()
-    {
-        Console.WriteLine("Call of SampleMethod 1 at: {0}", DateTime.Now);        
-    }
-    
-    static void Main()
-    {
-        Timer timer = new Timer(2000, SampleMethod);
-        Timer timer1 = new Timer(1000, SampleMethod1);
+            newThread.Start();
+        }
+
+        public delegate void MethodDelegate();
+
+        public uint Delay { get; set; }
+
+        public MethodDelegate MethodProperty { get; set; }
     }
 }
