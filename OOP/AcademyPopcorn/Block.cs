@@ -12,7 +12,6 @@ namespace AcademyPopcorn
         public Block(MatrixCoords topLeft)
             : base(topLeft, new char[,] { { '#' } })
         {
-
         }
 
         public override void Update()

@@ -14,22 +14,9 @@ namespace AcademyPopcorn
         List<GameObject> staticObjects;
         Racket playerRacket;
 
-        // task 2 make a field for Sleep time
+        // Task 2: Make a field for a Sleep time.
         private uint sleepTime = 500;
-        public uint SleepTime 
-        {
-            get 
-            {
-                return this.sleepTime;
-            }
-            private set
-            {
-                this.sleepTime = value;
-            }
-        }
-        //---------------
-
-
+        
         public Engine(IRenderer renderer, IUserInterface userInterface, uint sleepTime)
         {
             this.renderer = renderer;
@@ -37,7 +24,7 @@ namespace AcademyPopcorn
             this.allObjects = new List<GameObject>();
             this.movingObjects = new List<MovingObject>();
             this.staticObjects = new List<GameObject>();
-            this.SleepTime = sleepTime;
+            this.sleepTime = sleepTime;
         }
 
         private void AddStaticObject(GameObject obj)
@@ -63,7 +50,6 @@ namespace AcademyPopcorn
                 if (obj is Racket)
                 {
                     AddRacket(obj);
-
                 }
                 else
                 {
@@ -74,10 +60,11 @@ namespace AcademyPopcorn
 
         private void AddRacket(GameObject obj)
         {
-            //TODO: we should remove the previous racket from this.allObjects
-            //DONE task 3 - remove the previous racket - should be removed from both this.allObjects and this.staticObjects
+            // TODO: We should remove the previous racket from this.allObjects
+            // DONE: Task 3 - remove the previous racket - should be removed from both 
+            // this.allObjects AND this.staticObjects
             this.allObjects.RemoveAll(x => x is Racket);
-            this.staticObjects.RemoveAll(x => x is Racket);
+            this.staticObjects.RemoveAll(x => x is Racket);            
             this.playerRacket = obj as Racket;
             this.AddStaticObject(obj);
         }
@@ -98,7 +85,7 @@ namespace AcademyPopcorn
             {
                 this.renderer.RenderAll();
 
-                System.Threading.Thread.Sleep(Convert.ToUInt16(this.SleepTime));
+                System.Threading.Thread.Sleep(Convert.ToUInt16(this.sleepTime));
 
                 this.userInterface.ProcessInput();
 

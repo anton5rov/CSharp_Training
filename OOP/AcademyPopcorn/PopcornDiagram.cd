@@ -1,71 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AcademyPopcorn.Ball">
-    <Position X="10.75" Y="5" Width="1.5" />
-    <InheritanceLine Type="AcademyPopcorn.MovingObject" FixedToPoint="true">
-      <Path>
-        <Point X="11" Y="4.285" />
-        <Point X="11" Y="5" />
-      </Path>
-    </InheritanceLine>
+    <Position X="17.25" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BACAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Ball.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.Block">
-    <Position X="8.75" Y="3.25" Width="1.5" />
-    <InheritanceLine Type="AcademyPopcorn.GameObject" FixedFromPoint="true">
-      <Path>
-        <Point X="11.312" Y="2.312" />
-        <Point X="11.312" Y="2.875" />
-        <Point X="9.5" Y="2.875" />
-        <Point X="9.5" Y="3.25" />
-      </Path>
-    </InheritanceLine>
+    <Position X="10.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BASAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Block.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.CollisionData" Collapsed="true">
-    <Position X="17.25" Y="2.75" Width="1.5" />
+    <Position X="26" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>CollisionData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="AcademyPopcorn.CollisionDispatcher">
-    <Position X="23.25" Y="4.5" Width="1.5" />
+  <Class Name="AcademyPopcorn.CollisionDispatcher" Collapsed="true">
+    <Position X="27.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAIAAACAAAAAAAAAACAAAABAAAAAAAAAAAACAAA=</HashCode>
       <FileName>CollisionDispatcher.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.ConsoleInterface" Collapsed="true">
-    <Position X="20.75" Y="3.25" Width="1.5" />
+    <Position X="29.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ConsoleInterface.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.ConsoleRenderer" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="17.25" Y="4.25" Width="1.5" />
+    <Position X="26" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAAAABAAAAIAAAAAABAAACAAAAEAAAA=</HashCode>
       <FileName>ConsoleRenderer.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AcademyPopcorn.Engine" Collapsed="true">
-    <Position X="19" Y="4.25" Width="1.5" />
+    <Position X="27.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>DAAAAFQAAAEAAAQAAAAAAAAABggAAAACAAAAAACAwAI=</HashCode>
+      <HashCode>CAAAAFQAAAEAAAQAAAAAAAAABggAAAACAAAAAACAwAI=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.GameObject" Collapsed="true">
-    <Position X="11" Y="1.75" Width="1.5" />
+    <Position X="14.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BASAAAAAAIAAABAQAAAAABAQAQAAAAQAAIAAAAGAEAA=</HashCode>
       <FileName>GameObject.cs</FileName>
@@ -73,63 +59,43 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AcademyPopcorn.IndestructibleBlock">
-    <Position X="7.75" Y="6.5" Width="1.5" />
+    <Position X="10.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAA=</HashCode>
       <FileName>IndestructibleBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.KeyboardInterface" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="20.75" Y="4.25" Width="1.5" />
+    <Position X="29.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAEAAEAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>KeyboardInterface.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="AcademyPopcorn.MatrixCoords" Collapsed="true">
-    <Position X="17.25" Y="5.25" Width="1.5" />
+    <Position X="26" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAwAEAAAAAAAEAAoAAAAAAAAAAAAA=</HashCode>
       <FileName>MatrixCoords.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.MovingObject">
-    <Position X="11" Y="3.25" Width="1.5" />
-    <InheritanceLine Type="AcademyPopcorn.GameObject" FixedFromPoint="true">
-      <Path>
-        <Point X="11.75" Y="2.312" />
-        <Point X="11.75" Y="3.25" />
-      </Path>
-    </InheritanceLine>
+    <Position X="18.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAACAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MovingObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.Racket">
-    <Position X="14.75" Y="3" Width="1.5" />
-    <InheritanceLine Type="AcademyPopcorn.GameObject" FixedFromPoint="true">
-      <Path>
-        <Point X="12.375" Y="2.312" />
-        <Point X="12.375" Y="2.625" />
-        <Point X="15.5" Y="2.625" />
-        <Point X="15.5" Y="3" />
-      </Path>
-    </InheritanceLine>
+    <Position X="23.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BASAAAAAAAAAAAAAAAAAAEAAAAAAAIQIQAAAAAAAAAA=</HashCode>
       <FileName>Racket.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.MeteoriteBall">
-    <Position X="10.5" Y="7.75" Width="1.5" />
-    <InheritanceLine Type="AcademyPopcorn.Ball" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="11" Y="7.261" />
-        <Point X="11" Y="7.75" />
-      </Path>
-    </InheritanceLine>
+    <Position X="15" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAACAAAAAAAAAAAAAAAAQAAIAAAABAAAA=</HashCode>
       <FileName>MeteoriteBall.cs</FileName>
@@ -137,28 +103,28 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.TrailObject">
-    <Position X="7" Y="1.75" Width="1.5" />
+    <Position X="6" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
       <FileName>TrailObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.UnpassableBlock">
-    <Position X="6" Y="6.5" Width="1.5" />
+    <Position X="10.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>UnpassableBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.UnstoppableBall">
-    <Position X="12.5" Y="8.75" Width="1.5" />
+    <Position X="17.25" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BACAAAAAAIAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>UnstoppableBall.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.ExplodingBlock">
-    <Position X="7" Y="4" Width="1.5" />
+    <Position X="8.25" Y="6.25" Width="1.5" />
     <NestedTypes>
       <Class Name="AcademyPopcorn.ExplodingBlock.Piece" Collapsed="true">
         <TypeIdentifier>
@@ -172,62 +138,63 @@
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.Gift">
-    <Position X="12.5" Y="5.5" Width="1.25" />
+    <Position X="21.5" Y="6" Width="1.25" />
     <TypeIdentifier>
       <HashCode>BASAAAAAAIAAACAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
       <FileName>Gift.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.GiftBlock">
-    <Position X="8.75" Y="9" Width="1.5" />
-    <InheritanceLine Type="AcademyPopcorn.Block" FixedFromPoint="true" FixedToPoint="true">
-      <Path>
-        <Point X="9.875" Y="5.704" />
-        <Point X="9.875" Y="9" />
-      </Path>
-    </InheritanceLine>
+    <Position X="12.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAACAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAA=</HashCode>
       <FileName>GiftBlock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="AcademyPopcorn.Bullet">
-    <Position X="13.25" Y="3" Width="1.25" />
+    <Position X="19.5" Y="9" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Bullet.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="AcademyPopcorn.ICollidable">
-    <Position X="17.25" Y="6.5" Width="1.5" />
+  <Class Name="AcademyPopcorn.Counter">
+    <Position X="14.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAACAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Counter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AcademyPopcorn.ICollidable" Collapsed="true">
+    <Position X="26" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BACAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>ICollidable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="AcademyPopcorn.IObjectProducer">
-    <Position X="19" Y="6.5" Width="1.5" />
+  <Interface Name="AcademyPopcorn.IObjectProducer" Collapsed="true">
+    <Position X="27.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>IObjectProducer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AcademyPopcorn.IRenderable" Collapsed="true">
-    <Position X="20.75" Y="6.5" Width="1.5" />
+    <Position X="29.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAA=</HashCode>
       <FileName>IRenderable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AcademyPopcorn.IRenderer" Collapsed="true">
-    <Position X="17.25" Y="8.5" Width="1.5" />
+    <Position X="26" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAABAAAAIAAAAAAAAAACAAAAAAAAA=</HashCode>
       <FileName>IRenderer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AcademyPopcorn.IUserInterface" Collapsed="true">
-    <Position X="19" Y="8.5" Width="1.5" />
+    <Position X="27.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAQAEAAEAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IUserInterface.cs</FileName>
